@@ -1,37 +1,20 @@
-import { useState } from "react";
-import Link from "next/Link";
 import Head from "next/head";
+import Layout, { siteTitle } from "../components/layout";
+import utilStyles from "../components/utils.module.css";
 
-function Header({ title }) {
-  return <h1>{title ? title : "Default title"}</h1>;
-}
-
-export default function HomePage() {
-  const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
-
-  const [likes, setLikes] = useState(0);
-
-  function handleClick() {
-    setLikes(likes + 1);
-  }
-
+export default function Home() {
   return (
-    <div>
+    <Layout home>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>{siteTitle}</title>
       </Head>
-      <Header title="Develop. Preview. Ship. 🚀" />
-      {/* <h1 className={styles.title}> */}
-      <h1>
-        Read <Link href="/posts/first-post">this page!</Link>
-      </h1>
-      <ul>
-        {names.map((name) => (
-          <li key={name}>{name}</li>
-        ))}
-      </ul>
-      <button onClick={handleClick}>Like ({likes})</button>
-    </div>
+      <section className={utilStyles.headingMd}>
+        <p>Hi, I'm shoshana! I'm a software engineer based in NYC.</p>
+        <p>
+          (This is a sample website - you’ll be building a site like this on{" "}
+          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+        </p>
+      </section>
+    </Layout>
   );
 }

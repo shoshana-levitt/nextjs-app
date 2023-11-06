@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Link from "next/link";
+import Link from "next/Link";
+import Head from "next/head";
 
 function Header({ title }) {
   return <h1>{title ? title : "Default title"}</h1>;
@@ -16,6 +17,10 @@ export default function HomePage() {
 
   return (
     <div>
+      <Head>
+        <title>Create Next App</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header title="Develop. Preview. Ship. 🚀" />
       {/* <h1 className={styles.title}> */}
       <h1>
